@@ -1,3 +1,18 @@
 # Travel Itinerary Planner
 
-A simple and intuitive travel itinerary planner that allows users to organize activities, assign times, and track progress throughout the day. The application provides a clean, responsive interface with checklist functionality and visual progress indicators, making daily travel planning more engaging and efficient.
+A clean, modern React + Tailwind CSS web app for creating and managing travel activities with date/time scheduling.
+
+## Features
+
+- Add activities with name, date, time, and optional notes
+- Edit activities inline
+- Delete activities instantly
+- Automatic chronological sorting (earliest first)
+- Local persistence using `localStorage`
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
