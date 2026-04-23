@@ -11,14 +11,14 @@ function ActivityList({ activities, onAddActivity, onDeleteActivity, onEditActiv
   );
 
   return (
-    <section className="rounded-2xl bg-[#5FA8D3] p-3 shadow-sm ring-1 ring-[#4F9BC7]">
+    <section className="rounded-2xl bg-[#00274C] p-3 shadow-sm ring-1 ring-[#001C36]">
       <div className="rounded-xl bg-slate-100 p-4 sm:p-5">
         <div className="mb-4 flex items-center justify-between gap-4">
           <h2 className="text-lg font-semibold text-slate-800">{panelTitle}</h2>
           <button
             type="button"
             onClick={() => setShowForm((prev) => !prev)}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-200 text-slate-700 transition hover:bg-slate-300"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-[#FF7900] text-white transition hover:bg-[#E66D00]"
             aria-label={showForm ? "Close add activity form" : "Add activity"}
           >
             {showForm ? (

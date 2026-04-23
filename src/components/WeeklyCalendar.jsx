@@ -58,7 +58,7 @@ function WeeklyCalendar({ activities, weekStart, onShiftWeek }) {
       <button
         type="button"
         onClick={() => onShiftWeek(-7)}
-        className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#5FA8D3] text-white shadow-sm transition hover:bg-[#4D97C2] sm:flex"
+        className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#00274C] text-white shadow-sm transition hover:bg-[#003769] sm:flex"
         aria-label="Previous week"
       >
         <svg
@@ -75,7 +75,7 @@ function WeeklyCalendar({ activities, weekStart, onShiftWeek }) {
         </svg>
       </button>
 
-      <div className="w-full rounded-2xl bg-[#5FA8D3] p-3 shadow-sm ring-1 ring-[#4F9BC7]">
+      <div className="w-full rounded-2xl bg-[#00274C] p-3 shadow-sm ring-1 ring-[#001C36]">
         <div className="rounded-xl bg-white p-3 sm:p-4">
           <div className="mb-3 flex items-center justify-between gap-3">
             <button
@@ -125,7 +125,7 @@ function WeeklyCalendar({ activities, weekStart, onShiftWeek }) {
                           {cellActivities.map((activity) => (
                             <div
                               key={activity.id}
-                              className="mb-1 truncate rounded-md bg-sky-100 px-2 py-1 text-[11px] font-medium text-sky-800"
+                              className="mb-1 truncate rounded-md bg-[#FFEDD5] px-2 py-1 text-[11px] font-medium text-[#9A3412]"
                               title={activity.title}
                             >
                               {activity.time} {activity.title}
@@ -145,7 +145,7 @@ function WeeklyCalendar({ activities, weekStart, onShiftWeek }) {
       <button
         type="button"
         onClick={() => onShiftWeek(7)}
-        className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#5FA8D3] text-white shadow-sm transition hover:bg-[#4D97C2] sm:flex"
+        className="hidden h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#00274C] text-white shadow-sm transition hover:bg-[#003769] sm:flex"
         aria-label="Next week"
       >
         <svg

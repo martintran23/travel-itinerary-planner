@@ -77,11 +77,11 @@ function App() {
   return (
     <main className="min-h-screen bg-slate-100 py-8">
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 sm:px-6 lg:px-8">
-        <header className="rounded-2xl bg-[#5FA8D3] p-6 text-center shadow-sm ring-1 ring-[#4F9BC7] sm:p-8">
+        <header className="rounded-2xl bg-[#00274C] p-6 text-center shadow-sm ring-1 ring-[#001C36] sm:p-8">
           <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-4xl">
             Travel Itinerary Planner
           </h1>
-          <p className="mt-3 text-base text-sky-50">
+          <p className="mt-3 text-base text-slate-100">
             Plan your activities with date and time, then keep everything in order.
           </p>
         </header>

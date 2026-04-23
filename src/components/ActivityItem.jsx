@@ -63,7 +63,7 @@ function ActivityItem({ activity, onDeleteActivity, onEditActivity }) {
             type="text"
             value={draft.title}
             onChange={handleDraftChange}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-[#FF7900] focus:ring-2 focus:ring-[#FFE1C2]"
           />
 
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -72,14 +72,14 @@ function ActivityItem({ activity, onDeleteActivity, onEditActivity }) {
               type="date"
               value={draft.date}
               onChange={handleDraftChange}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-[#FF7900] focus:ring-2 focus:ring-[#FFE1C2]"
             />
             <input
               name="time"
               type="time"
               value={draft.time}
               onChange={handleDraftChange}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-[#FF7900] focus:ring-2 focus:ring-[#FFE1C2]"
             />
           </div>
 
@@ -89,7 +89,7 @@ function ActivityItem({ activity, onDeleteActivity, onEditActivity }) {
             value={draft.notes}
             onChange={handleDraftChange}
             placeholder="Notes"
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-[#FF7900] focus:ring-2 focus:ring-[#FFE1C2]"
           />
 
           {error ? <p className="text-sm text-rose-600">{error}</p> : null}
@@ -98,7 +98,7 @@ function ActivityItem({ activity, onDeleteActivity, onEditActivity }) {
             <button
               type="button"
               onClick={handleSave}
-              className="rounded-lg bg-emerald-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-emerald-500"
+              className="rounded-lg bg-[#FF7900] px-3 py-1.5 text-sm font-medium text-white transition hover:bg-[#E66D00]"
             >
               Save
             </button>
@@ -123,7 +123,7 @@ function ActivityItem({ activity, onDeleteActivity, onEditActivity }) {
             <button
               type="button"
               onClick={() => setIsEditing(true)}
-              className="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white transition hover:bg-indigo-500"
+              className="rounded-lg bg-[#00274C] px-3 py-1.5 text-sm font-medium text-white transition hover:bg-[#003769]"
             >
               Edit
             </button>

@@ -50,7 +50,7 @@ function ActivityForm({ onAddActivity, compact = false }) {
               placeholder="Visit museum"
               value={formData.title}
               onChange={handleChange}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-[#FF7900] focus:ring-2 focus:ring-[#FFE1C2]"
             />
           </div>
 
@@ -64,7 +64,7 @@ function ActivityForm({ onAddActivity, compact = false }) {
               type="date"
               value={formData.date}
               onChange={handleChange}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-[#FF7900] focus:ring-2 focus:ring-[#FFE1C2]"
             />
           </div>
 
@@ -78,7 +78,7 @@ function ActivityForm({ onAddActivity, compact = false }) {
               type="time"
               value={formData.time}
               onChange={handleChange}
-              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+              className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-[#FF7900] focus:ring-2 focus:ring-[#FFE1C2]"
             />
           </div>
         </div>
@@ -94,7 +94,7 @@ function ActivityForm({ onAddActivity, compact = false }) {
             placeholder="Add useful details..."
             value={formData.notes}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            className="w-full rounded-lg border border-slate-300 px-3 py-2 text-slate-900 outline-none transition focus:border-[#FF7900] focus:ring-2 focus:ring-[#FFE1C2]"
           />
         </div>
 
@@ -102,7 +102,7 @@ function ActivityForm({ onAddActivity, compact = false }) {
 
         <button
           type="submit"
-          className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-300"
+          className="rounded-lg bg-[#FF7900] px-4 py-2 text-sm font-medium text-white transition hover:bg-[#E66D00] focus:outline-none focus:ring-2 focus:ring-[#FFD3A8]"
         >
           Add
         </button>
