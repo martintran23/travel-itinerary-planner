@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import ActivityForm from "./components/ActivityForm";
 import ActivityList from "./components/ActivityList";
+import WeeklyCalendar from "./components/WeeklyCalendar";
 
 const STORAGE_KEY = "travel-itinerary-planner.activities";
 
@@ -26,6 +26,15 @@ const sortActivities = (items) =>
 
 function App() {
   const [activities, setActivities] = useState(getInitialActivities);
+  const [weekStart, setWeekStart] = useState(() => {
+    const today = new Date();
+    const day = today.getDay();
+    const mondayOffset = day === 0 ? -6 : 1 - day;
+    const monday = new Date(today);
+    monday.setDate(today.getDate() + mondayOffset);
+    monday.setHours(0, 0, 0, 0);
+    return monday;
+  });
 
   const sortedActivities = useMemo(() => sortActivities(activities), [activities]);
 
@@ -57,22 +66,31 @@ function App() {
     saveActivities(nextActivities);
   };
 
+  const shiftWeek = (days) => {
+    setWeekStart((prev) => {
+      const next = new Date(prev);
+      next.setDate(prev.getDate() + days);
+      return next;
+    });
+  };
+
   return (
-    <main className="min-h-screen bg-slate-50 py-8">
-      <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 sm:px-6 lg:px-8">
-        <header className="rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200">
-          <h1 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+    <main className="min-h-screen bg-slate-100 py-8">
+      <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 sm:px-6 lg:px-8">
+        <header className="rounded-2xl bg-[#5FA8D3] p-6 text-center shadow-sm ring-1 ring-[#4F9BC7] sm:p-8">
+          <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-4xl">
             Travel Itinerary Planner
           </h1>
-          <p className="mt-2 text-sm text-slate-600">
+          <p className="mt-3 text-base text-sky-50">
             Plan your activities with date and time, then keep everything in order.
           </p>
         </header>
 
-        <ActivityForm onAddActivity={handleAddActivity} />
+        <WeeklyCalendar activities={sortedActivities} weekStart={weekStart} onShiftWeek={shiftWeek} />
 
         <ActivityList
           activities={sortedActivities}
+          onAddActivity={handleAddActivity}
           onDeleteActivity={handleDeleteActivity}
           onEditActivity={handleEditActivity}
         />

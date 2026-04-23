@@ -7,7 +7,7 @@ const initialFormState = {
   notes: ""
 };
 
-function ActivityForm({ onAddActivity }) {
+function ActivityForm({ onAddActivity, compact = false }) {
   const [formData, setFormData] = useState(initialFormState);
   const [error, setError] = useState("");
 
@@ -36,7 +36,7 @@ function ActivityForm({ onAddActivity }) {
   };
 
   return (
-    <section className="rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200 sm:p-6">
+    <section className={compact ? "" : "rounded-2xl bg-white p-5 shadow-sm ring-1 ring-slate-200 sm:p-6"}>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div className="sm:col-span-2">
