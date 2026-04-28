@@ -4,6 +4,7 @@ A clean, modern React + Tailwind CSS web app for creating and managing travel ac
 
 ## Features
 
+- Live itinerary calendar
 - Add activities with name, date, time, and optional notes
 - Edit activities inline
 - Delete activities instantly
