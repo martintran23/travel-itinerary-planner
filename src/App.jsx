@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import ActivityList from "./components/ActivityList";
 import WeeklyCalendar from "./components/WeeklyCalendar";
+import ProgressBar from "./components/ProgressBar";
 
 const STORAGE_KEY = "travel-itinerary-planner.activities";
 
@@ -26,6 +27,7 @@ const sortActivities = (items) =>
 
 function App() {
   const [activities, setActivities] = useState(getInitialActivities);
+  const [checkedIds, setCheckedIds] = useState(() => new Set());
   const [weekStart, setWeekStart] = useState(() => {
     const today = new Date();
     const day = today.getDay();
@@ -57,6 +59,11 @@ function App() {
   const handleDeleteActivity = (id) => {
     const nextActivities = activities.filter((activity) => activity.id !== id);
     saveActivities(nextActivities);
+    setCheckedIds((prev) => {
+      const next = new Set(prev);
+      next.delete(id);
+      return next;
+    });
   };
 
   const handleEditActivity = (id, updates) => {
@@ -64,6 +71,18 @@ function App() {
       activity.id === id ? { ...activity, ...updates } : activity
     );
     saveActivities(nextActivities);
+  };
+
+  const handleToggleChecked = (id) => {
+    setCheckedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
   };
 
   const shiftWeek = (days) => {
@@ -88,11 +107,15 @@ function App() {
 
         <WeeklyCalendar activities={sortedActivities} weekStart={weekStart} onShiftWeek={shiftWeek} />
 
+        <ProgressBar completed={checkedIds.size} total={sortedActivities.length} />
+
         <ActivityList
           activities={sortedActivities}
           onAddActivity={handleAddActivity}
           onDeleteActivity={handleDeleteActivity}
           onEditActivity={handleEditActivity}
+          checkedIds={checkedIds}
+          onToggleChecked={handleToggleChecked}
         />
       </div>
     </main>
