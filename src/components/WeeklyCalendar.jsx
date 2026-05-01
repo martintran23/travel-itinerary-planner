@@ -37,7 +37,7 @@ function getWeekLabel(weekDates) {
   return `${first.toLocaleDateString([], { month: "short", day: "numeric" })} - ${last.toLocaleDateString([], { month: "short", day: "numeric", year: "numeric" })}`;
 }
 
-function WeeklyCalendar({ activities, weekStart, onShiftWeek }) {
+function WeeklyCalendar({ activities, checkedIds, weekStart, onShiftWeek }) {
   const weekDates = getWeekDates(weekStart);
   const weekLabel = getWeekLabel(weekDates);
   const calendarMap = buildCalendarMap(activities);
@@ -122,15 +122,20 @@ function WeeklyCalendar({ activities, weekStart, onShiftWeek }) {
                       const cellActivities = calendarMap[key] || [];
                       return (
                         <div key={key} className="min-h-12 border-l border-slate-100 p-1">
-                          {cellActivities.map((activity) => (
-                            <div
-                              key={activity.id}
-                              className="mb-1 truncate rounded-md bg-[#FFEDD5] px-2 py-1 text-[11px] font-medium text-[#9A3412]"
-                              title={activity.title}
-                            >
-                              {activity.time} {activity.title}
-                            </div>
-                          ))}
+                          {cellActivities.map((activity) => {
+                            const checked = checkedIds.has(activity.id);
+                            return (
+                              <div
+                                key={activity.id}
+                                className={`mb-1 truncate rounded-md bg-[#FFEDD5] px-2 py-1 text-[11px] font-medium text-[#9A3412] ${
+                                  checked ? "line-through opacity-70" : ""
+                                }`}
+                                title={activity.title}
+                              >
+                                {activity.time} {activity.title}
+                              </div>
+                            );
+                          })}
                         </div>
                       );
                     })}

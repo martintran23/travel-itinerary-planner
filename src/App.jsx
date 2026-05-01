@@ -105,7 +105,12 @@ function App() {
           </p>
         </header>
 
-        <WeeklyCalendar activities={sortedActivities} weekStart={weekStart} onShiftWeek={shiftWeek} />
+        <WeeklyCalendar
+          activities={sortedActivities}
+          checkedIds={checkedIds}
+          weekStart={weekStart}
+          onShiftWeek={shiftWeek}
+        />
 
         <ProgressBar completed={checkedIds.size} total={sortedActivities.length} />
 
