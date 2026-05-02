@@ -3,7 +3,7 @@ import ActivityList from "./components/ActivityList";
 import WeeklyCalendar from "./components/WeeklyCalendar";
 import ProgressBar from "./components/ProgressBar";
 
-const STORAGE_KEY = "travel-itinerary-planner.activities";
+const STORAGE_KEY = "travelpilot.activities";
 
 const getInitialActivities = () => {
   try {
@@ -98,7 +98,7 @@ function App() {
       <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 sm:px-6 lg:px-8">
         <header className="rounded-2xl bg-[#00274C] p-6 text-center shadow-sm ring-1 ring-[#001C36] sm:p-8">
           <h1 className="text-2xl font-semibold tracking-tight text-white sm:text-4xl">
-            Travel Itinerary Planner
+            TravelPilot
           </h1>
           <p className="mt-3 text-base text-slate-100">
             Plan your activities with date and time, then keep everything in order.

@@ -1,4 +1,4 @@
-# Travel Itinerary Planner
+# TravelPilot
 
 A clean, modern React + Tailwind CSS web app for creating and managing travel activities with date/time scheduling.
 
